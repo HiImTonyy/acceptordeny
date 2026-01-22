@@ -1,6 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqfobbs4xqhqh"]
+[gd_scene load_steps=7 format=3 uid="uid://cqfobbs4xqhqh"]
 
 [ext_resource type="Script" uid="uid://dqywtegc8560c" path="res://scripts/home.gd" id="1_u4wd2"]
+[ext_resource type="StyleBox" uid="uid://c7wpc68s8mtw5" path="res://style_stuff/normal_button.tres" id="2_u4wd2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4wd2"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w18ys"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+expand_margin_right = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reixx"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhids"]
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_u4wd2")
@@ -15,37 +46,108 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.40832946, 0.40832946, 0.40832946, 1)
 
-[node name="ContainerMainButtons" type="VBoxContainer" parent="HomeUI"]
-anchors_preset = 8
+[node name="ContainerMainButtons" type="GridContainer" parent="HomeUI"]
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -55.5
-offset_top = -20.0
-offset_right = 55.5
-offset_bottom = 20.0
+anchor_bottom = 1.0
+offset_left = -532.0
+offset_top = -158.0
+offset_right = 532.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 12
-
-[node name="ButtonGoToWork" type="Button" parent="HomeUI/ContainerMainButtons"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 50
-text = "GO TO WORK"
+grow_vertical = 0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
 
 [node name="ButtonPlayerStats" type="Button" parent="HomeUI/ContainerMainButtons"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.050980393, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0.5542525, 0.0037505405, 0.5542997, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
+theme_override_styles/pressed = ExtResource("2_u4wd2")
+theme_override_styles/hover = ExtResource("2_u4wd2")
 text = "SHOW STATS"
+
+[node name="ButtonGoToWork" type="Button" parent="HomeUI/ContainerMainButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(3.9948522e-06, 0.8876626, 0, 1)
+theme_override_colors/font_hover_color = Color(0.0016718216, 0.4447694, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_w18ys")
+theme_override_styles/pressed = ExtResource("2_u4wd2")
+theme_override_styles/hover = ExtResource("2_u4wd2")
+text = "GO TO WORK"
 
 [node name="ButtonSaveGame" type="Button" parent="HomeUI/ContainerMainButtons"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.49421448, 0.49660206, 1.92523e-07, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_reixx")
+theme_override_styles/pressed = ExtResource("2_u4wd2")
+theme_override_styles/hover = ExtResource("2_u4wd2")
 text = "SAVE GAME"
+
+[node name="ButtonPayRent" type="Button" parent="HomeUI/ContainerMainButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.36862746, 1)
+theme_override_colors/font_hover_color = Color(0.6266698, 0, 0.2170606, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("2_u4wd2")
+theme_override_styles/pressed = ExtResource("2_u4wd2")
+theme_override_styles/hover = ExtResource("2_u4wd2")
+text = "PAY RENT"
+
+[node name="ButtonPayFood" type="Button" parent="HomeUI/ContainerMainButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.36862746, 1)
+theme_override_colors/font_hover_color = Color(0.6266698, 0, 0.2170606, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("2_u4wd2")
+theme_override_styles/pressed = ExtResource("2_u4wd2")
+theme_override_styles/hover = ExtResource("2_u4wd2")
+text = "GET FOOD"
+
+[node name="ButtonPayElectricity" type="Button" parent="HomeUI/ContainerMainButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.36862746, 1)
+theme_override_colors/font_hover_color = Color(0.6266698, 0, 0.2170606, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("2_u4wd2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uhids")
+theme_override_styles/hover = ExtResource("2_u4wd2")
+text = "PAY ELECTRICITY"
+
+[node name="ContainerTopUI" type="VBoxContainer" parent="HomeUI"]
+offset_right = 350.0
+offset_bottom = 49.0
+
+[node name="LabelPlayerName" type="Label" parent="HomeUI/ContainerTopUI"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Watahburgah Mcgee"
+
+[node name="LabelCash" type="Label" parent="HomeUI/ContainerTopUI"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Balance: $2.50"
+
+[node name="LabelHungerLevel" type="Label" parent="HomeUI/ContainerTopUI"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Hunger Level: Hungie"
