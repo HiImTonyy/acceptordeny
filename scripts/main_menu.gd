@@ -15,7 +15,7 @@ func _on_start_game_button_button_down() -> void:
 	if input_first_name.text and input_last_name.text != "":
 		player.first_name = input_first_name.text
 		player.last_name = input_last_name.text
-		set_player_stats()
+		print("FIRST" + str(player.cash))
 		get_tree().change_scene_to_file("res://scenes/home.tscn")
 	else:
 		$MenuUI/InputContainers/LabelInputTitle.text = "NEITHER FIRST NAME AND LAST NAME CAN BE BLANK!"

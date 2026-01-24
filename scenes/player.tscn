@@ -4,5 +4,3 @@
 
 [node name="Player" type="Node"]
 script = ExtResource("1_3vyb7")
-
-[connection signal="script_changed" from="." to="." method="_on_script_changed"]
