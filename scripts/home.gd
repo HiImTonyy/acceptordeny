@@ -21,3 +21,7 @@ func update_ui():
 	label_player_cash.text = "Balance: " + "$" + str(snapped(player.cash, 0.01))
 	$Control/StatsUI/VBoxContainer/VBoxContainer/LabelStatsTotalCorrectJudgements.text = "Total Correct Judgement: " + str(player.total_correct_judgements)
 	pass
+
+
+func _on_player_update_stats_signal() -> void:
+	print("whhw")

@@ -1,15 +1,6 @@
 extends Node
 
-signal update_stats_signal
-
 var cash : float = 50.00
-
-var _cash: float:
-	set(value):
-		cash = value
-		update_stats()
-	get:
-		return cash
 var first_name = "Tony"
 var last_name = "Siproni"
 var daily_wage = 50.00
@@ -23,7 +14,3 @@ var went_to_work = false
 var times_ate_today
 var total_food_items
 var total_correct_judgements = 0
-
-
-func update_stats():
-	update_stats_signal.emit()
