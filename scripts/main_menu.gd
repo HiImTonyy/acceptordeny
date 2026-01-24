@@ -24,10 +24,11 @@ func _on_start_game_button_button_down() -> void:
 
 func set_player_stats():
 	player.cash = 50.00
-	# player.stats.current_rank = player.rank.keys()[player.set_current_rank_state]
+	# player.rank = player.rank_state.keys()[player.set_current_rank_state]
 	player.daily_wage = 50
 	player.went_to_work = false
-	#player.stats.set_hunger_state = player.hunger_state.Alright
-	#HUNGER STATE
+	# player.set_hunger_state = player.hunger_state.Alright
+	# player.hunger.hunger_state.keys()[player.set_current_hunger_state]
 	player.times_ate_today = 0
 	player.total_food_items = 0
+	

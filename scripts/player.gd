@@ -1,14 +1,15 @@
 extends Node
 
 var first_name = "Tony"
-var last_name = "Sepreoni"
-var cash : float = 250.97
-enum rank {noobie, junior, officer, senior_officer, master}
-var current_rank = rank.noobie
-var daily_wage : float = 50
-var went_to_work : bool = false
-enum hunger_level {dying, very_hugry, hungry, alright, great, full, fatso}
-var current_hunger_level_setting = hunger_level.great
-var current_hunger_level = "great"
-var times_ate_today : int = 0
-var total_food_items : int = 0
+var last_name = "Siproni"
+var cash = 50.00
+var daily_wage = 50.00
+enum rank_state {Noobie, Junior, Officer, Senior_officer, Master}
+var current_rank_state = rank_state.Noobie
+var rank = rank_state.keys()[current_rank_state]
+enum hunger_state {Dying, Very_Hugry, Hungry, Alright, Great, Full, Fatso}
+var current_hunger_state = hunger_state.Great
+var hunger = hunger_state.keys()[current_hunger_state]
+var went_to_work = false
+var times_ate_today
+var total_food_items
