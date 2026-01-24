@@ -12,7 +12,22 @@ func _on_new_game_button_down() -> void:
 
 
 func _on_start_game_button_button_down() -> void:
-	player.first_name = input_first_name.text
-	player.last_name = input_last_name.text
-	get_tree().change_scene_to_file("res://scenes/home.tscn")
-	
+	if input_first_name.text and input_last_name.text != "":
+		player.first_name = input_first_name.text
+		player.last_name = input_last_name.text
+		set_player_stats()
+		get_tree().change_scene_to_file("res://scenes/home.tscn")
+	else:
+		$MenuUI/InputContainers/LabelInputTitle.text = "NEITHER FIRST NAME AND LAST NAME CAN BE BLANK!"
+		
+		
+
+func set_player_stats():
+	player.cash = 50.00
+	# player.stats.current_rank = player.rank.keys()[player.set_current_rank_state]
+	player.daily_wage = 50
+	player.went_to_work = false
+	#player.stats.set_hunger_state = player.hunger_state.Alright
+	#HUNGER STATE
+	player.times_ate_today = 0
+	player.total_food_items = 0
