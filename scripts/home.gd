@@ -31,17 +31,49 @@ extends Node2D
 @export var label_other_demote_chance : Label
 
 @export var label_current_date : Label
+@export var label_popup_text : Label
 
 
 
 func _ready():
+	bills.not_enough_cash.connect(not_enough_cash)
+	bills.enough_cash.connect(enough_cash)
 	update_ui()
+		
+func _on_button_pay_rent_button_down() -> void:
+	player.paying_rent_bill.emit()
+	
+func _on_button_pay_electricity_button_down() -> void:
+	player.paying_electric_bill.emit()
+	
+func not_enough_cash():
+	popup_message("Not enough cash!", Color.RED)
+	
+func enough_cash():
+	popup_message("Bill paid!", Color.GREEN)
+	
+	
+func popup_message(message: String, color: Color):
+	label_popup_text.add_theme_color_override("font_color", color)
+	label_popup_text.visible = true
+	label_popup_text.text = message
+	fade_effect()
+	update_ui()
+	
+func fade_effect():
+	label_popup_text.visible = true
+	label_popup_text.modulate.a = 1
+	var tween = create_tween()
+	tween.tween_property(label_popup_text, "modulate:a", 0, 0.2)
+	tween.tween_property(label_popup_text, "modulate:a", 1, 0.2)
+	tween.tween_property(label_popup_text, "modulate:a", 0, 0.2)
+	tween.tween_property(label_popup_text, "modulate:a", 1, 0.2)
+	tween.tween_property(label_popup_text, "modulate:a", 0, 3)
 	
 	
 func update_ui():
 	player.current_hunger_state = player.hunger_state.keys()[player.hunger]
 	player.current_rank_state = player.rank_state.keys()[player.rank]
-	
 	# TOP U.I
 	label_player_name.text = player.first_name + " " + player.last_name
 	label_player_cash.text = "Balance: " + "$" + str(snapped(player.cash, 0.01))
@@ -79,4 +111,5 @@ func _on_button_button_down() -> void:
 	world.next_day()
 	bills.rent_paid = true
 	bills.electricity_paid = true
+	player.cash += 1000
 	update_ui()

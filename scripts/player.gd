@@ -1,5 +1,8 @@
 extends Node
 
+signal paying_rent_bill
+signal paying_electric_bill
+
 var cash : float = 50.00
 var first_name : String = "Tony"
 var last_name : String = "Siproni"

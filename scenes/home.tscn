@@ -30,7 +30,7 @@ bg_color = Color(0, 0, 0, 1)
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("label_player_name", "label_player_cash", "label_hunger_level", "label_rank", "label_stats_total_correct_judgements", "label_stats_total_incorrect_judgements", "label_stats_judgement_success_rate", "label_stats_total_errors_spotted_correctly", "label_stats_total_errors_spotted_incorrectly", "label_stats_errors_spotted_success_rate", "label_stats_total_cash_made", "label_stats_total_food_paid", "label_stats_total_rent_paid", "label_stats_total_electricity_paid", "label_stats_total_bills_paid", "label_stats_highest_correct_judgement_streak", "label_stats_highest_incorrect_judgement_streak", "label_stats_highest_judgement_days_streak", "label_other_days_till_rent", "label_other_rent_cost", "label_other_days_till_electricity", "label_other_electric_cost", "label_other_promote_chance", "label_other_demote_chance", "label_current_date")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("label_player_name", "label_player_cash", "label_hunger_level", "label_rank", "label_stats_total_correct_judgements", "label_stats_total_incorrect_judgements", "label_stats_judgement_success_rate", "label_stats_total_errors_spotted_correctly", "label_stats_total_errors_spotted_incorrectly", "label_stats_errors_spotted_success_rate", "label_stats_total_cash_made", "label_stats_total_food_paid", "label_stats_total_rent_paid", "label_stats_total_electricity_paid", "label_stats_total_bills_paid", "label_stats_highest_correct_judgement_streak", "label_stats_highest_incorrect_judgement_streak", "label_stats_highest_judgement_days_streak", "label_other_days_till_rent", "label_other_rent_cost", "label_other_days_till_electricity", "label_other_electric_cost", "label_other_promote_chance", "label_other_demote_chance", "label_current_date", "label_popup_text")]
 script = ExtResource("1_u4wd2")
 label_player_name = NodePath("HomeUI/TopUI/TopUIBackground/ContainerTopUI/LabelPlayerName")
 label_player_cash = NodePath("HomeUI/TopUI/TopUIBackground/ContainerTopUI/LabelCash")
@@ -57,10 +57,24 @@ label_other_electric_cost = NodePath("Control/StatsUI2/VBoxContainer/VBoxContain
 label_other_promote_chance = NodePath("Control/StatsUI2/VBoxContainer/VBoxContainer/LabelOtherPromoteChance")
 label_other_demote_chance = NodePath("Control/StatsUI2/VBoxContainer/VBoxContainer/LabelOtherDemoteChance")
 label_current_date = NodePath("HomeUI/TopUI/LabelCurrentDate")
+label_popup_text = NodePath("HomeUI/TopUI/LabelPopupText")
 
 [node name="HomeUI" type="CanvasLayer" parent="."]
 
 [node name="TopUI" type="CanvasLayer" parent="HomeUI"]
+
+[node name="LabelPopupText" type="Label" parent="HomeUI/TopUI"]
+visible = false
+offset_left = 745.0
+offset_top = 242.0
+offset_right = 1196.0
+offset_bottom = 284.0
+theme_override_colors/font_color = Color(0.85490197, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 30
+text = "Whattya buyin'? "
+horizontal_alignment = 1
 
 [node name="TopUIBackground" type="ColorRect" parent="HomeUI/TopUI"]
 offset_left = -1.0
@@ -525,4 +539,6 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Electric Cost: "
 
+[connection signal="button_down" from="HomeUI/ContainerMainButtons/ButtonPayRent" to="." method="_on_button_pay_rent_button_down"]
+[connection signal="button_down" from="HomeUI/ContainerMainButtons/ButtonPayElectricity" to="." method="_on_button_pay_electricity_button_down"]
 [connection signal="button_down" from="HomeUI/ContainerMainButtons/Button" to="." method="_on_button_button_down"]
