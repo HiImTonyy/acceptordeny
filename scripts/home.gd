@@ -22,27 +22,15 @@ extends Node2D
 @export var label_stats_highest_incorrect_judgement_streak : Label
 @export var label_stats_highest_judgement_days_streak : Label
 
+# OTHER INFORMATION
+@export var label_other_days_till_rent : Label
+@export var label_other_rent_cost : Label
+@export var label_other_days_till_electricity : Label
+@export var label_other_electric_cost : Label
+
+
 
 func _ready():
-	update_ui()
-
-
-func _on_button_button_down() -> void:
-	player.cash += 50.50
-	playerstats.total_correct_judgements += 1
-	playerstats.total_incorrect_judgements += 1
-	playerstats.judgement_success_rate += 1.00
-	playerstats.total_errors_spotted_correctly += 1
-	playerstats.total_errors_spotted_incorrectly += 1
-	playerstats.errors_spotted_success_rate += 1.00
-	playerstats.total_cash_made += 1
-	playerstats.total_food_paid += 1
-	playerstats.total_rent_paid += 1
-	playerstats.total_electricity_paid +=1 
-	playerstats.total_bills_paid +=1
-	playerstats.highest_correct_judgement_streak += 1
-	playerstats.highest_incorrect_judgement_streak += 1
-	playerstats.highest_judgement_days_streak +=1 
 	update_ui()
 	
 	
@@ -71,3 +59,9 @@ func update_ui():
 	label_stats_highest_correct_judgement_streak.text = "Highest Correct Judgement Streak: " + str(playerstats.highest_correct_judgement_streak)
 	label_stats_highest_incorrect_judgement_streak.text = "Highest Incorrect Judgement Streak: " + str(playerstats.highest_incorrect_judgement_streak)
 	label_stats_highest_judgement_days_streak.text = "Highest Judgement Days Streak: " + str(playerstats.highest_judgement_days_streak)
+	
+	# OTHER INFORMATION
+	label_other_days_till_rent.text = "Days Till Rent Bill: " + str(bills.days_till_rent)
+	label_other_rent_cost.text = "Rent Cost: " + "$" + str(bills.rent_cost)
+	label_other_days_till_electricity.text = "Days Till Electric Bill " + str(bills.days_till_electric)
+	label_other_electric_cost.text = "Electricity Cost: " + "$" + str(bills.electric_cost)

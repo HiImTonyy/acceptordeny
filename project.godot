@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 player="*res://scenes/player.tscn"
 playerstats="*res://scenes/player_stats.tscn"
+bills="*res://scenes/bills.tscn"
 
 [display]
 

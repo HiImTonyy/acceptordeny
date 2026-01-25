@@ -48,3 +48,13 @@ func set_player_shit():
 	playerstats.highest_correct_judgement_streak = 0
 	playerstats.highest_incorrect_judgement_streak = 0
 	playerstats.highest_judgement_days_streak = 0
+	
+	# Bills
+	bills.food_cost = 22.00
+	bills.rent_cost = 250.00
+	bills.electric_cost = 65.00
+	bills.days_till_rent = 30
+	bills.days_till_electric = 14
+	bills.paid_food = false
+	bills.paid_rent = false
+	bills.paid_electricity = false
