@@ -15,20 +15,36 @@ func _on_start_game_button_button_down() -> void:
 	if input_first_name.text and input_last_name.text != "":
 		player.first_name = input_first_name.text
 		player.last_name = input_last_name.text
-		print("FIRST" + str(player.cash))
+		set_player_shit()
+		
 		get_tree().change_scene_to_file("res://scenes/home.tscn")
 	else:
 		$MenuUI/InputContainers/LabelInputTitle.text = "NEITHER FIRST NAME AND LAST NAME CAN BE BLANK!"
 		
 		
 
-func set_player_stats():
+func set_player_shit():
+	# just player
 	player.cash = 50.00
-	# player.rank = player.rank_state.keys()[player.set_current_rank_state]
-	player.daily_wage = 50
+	player.rank = player.rank_state.Noobie
+	player.hunger = player.hunger_state.Alright
+	player.daily_wage = 50.00
 	player.went_to_work = false
-	# player.set_hunger_state = player.hunger_state.Alright
-	# player.hunger.hunger_state.keys()[player.set_current_hunger_state]
 	player.times_ate_today = 0
 	player.total_food_items = 0
 	
+	# player stats
+	playerstats.total_correct_judgements = 0
+	playerstats.total_incorrect_judgements = 0
+	playerstats.judgement_success_rate = 0.00
+	playerstats.total_errors_spotted_correctly = 0
+	playerstats.total_errors_spotted_incorrectly = 0
+	playerstats.errors_spotted_success_rate = 0.00
+	playerstats.total_cash_made = 0.00
+	playerstats.total_food_paid = 0.00
+	playerstats.total_rent_paid = 0.00
+	playerstats.total_electricity_paid  = 0.00
+	playerstats.total_bills_paid = 0.00
+	playerstats.highest_correct_judgement_streak = 0
+	playerstats.highest_incorrect_judgement_streak = 0
+	playerstats.highest_judgement_days_streak = 0
