@@ -30,7 +30,7 @@ bg_color = Color(0, 0, 0, 1)
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("label_player_name", "label_player_cash", "label_hunger_level", "label_rank", "label_stats_total_correct_judgements", "label_stats_total_incorrect_judgements", "label_stats_judgement_success_rate", "label_stats_total_errors_spotted_correctly", "label_stats_total_errors_spotted_incorrectly", "label_stats_errors_spotted_success_rate", "label_stats_total_cash_made", "label_stats_total_food_paid", "label_stats_total_rent_paid", "label_stats_total_electricity_paid", "label_stats_total_bills_paid", "label_stats_highest_correct_judgement_streak", "label_stats_highest_incorrect_judgement_streak", "label_stats_highest_judgement_days_streak", "label_other_days_till_rent", "label_other_rent_cost", "label_other_days_till_electricity", "label_other_electric_cost")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("label_player_name", "label_player_cash", "label_hunger_level", "label_rank", "label_stats_total_correct_judgements", "label_stats_total_incorrect_judgements", "label_stats_judgement_success_rate", "label_stats_total_errors_spotted_correctly", "label_stats_total_errors_spotted_incorrectly", "label_stats_errors_spotted_success_rate", "label_stats_total_cash_made", "label_stats_total_food_paid", "label_stats_total_rent_paid", "label_stats_total_electricity_paid", "label_stats_total_bills_paid", "label_stats_highest_correct_judgement_streak", "label_stats_highest_incorrect_judgement_streak", "label_stats_highest_judgement_days_streak", "label_other_days_till_rent", "label_other_rent_cost", "label_other_days_till_electricity", "label_other_electric_cost", "label_current_date")]
 script = ExtResource("1_u4wd2")
 label_player_name = NodePath("HomeUI/TopUI/TopUIBackground/ContainerTopUI/LabelPlayerName")
 label_player_cash = NodePath("HomeUI/TopUI/TopUIBackground/ContainerTopUI/LabelCash")
@@ -54,6 +54,7 @@ label_other_days_till_rent = NodePath("Control/StatsUI2/VBoxContainer/VBoxContai
 label_other_rent_cost = NodePath("Control/StatsUI2/VBoxContainer/VBoxContainer/LabelOtherRentCost")
 label_other_days_till_electricity = NodePath("Control/StatsUI2/VBoxContainer/VBoxContainer/LabelOtherDaysTillElectricBill")
 label_other_electric_cost = NodePath("Control/StatsUI2/VBoxContainer/VBoxContainer/LabelOtherElectricCost")
+label_current_date = NodePath("HomeUI/TopUI/LabelCurrentDate")
 
 [node name="HomeUI" type="CanvasLayer" parent="."]
 
@@ -108,7 +109,7 @@ theme_override_font_sizes/font_size = 39
 text = "Rank: PewPew"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="HomeUI/TopUI"]
+[node name="LabelCurrentDate" type="Label" parent="HomeUI/TopUI"]
 offset_right = 365.0
 offset_bottom = 42.0
 theme_override_colors/font_outline_color = Color(0, 1, 0, 1)
@@ -232,6 +233,10 @@ theme_override_styles/normal = ExtResource("2_u4wd2")
 theme_override_styles/pressed = ExtResource("2_u4wd2")
 theme_override_styles/hover = ExtResource("2_u4wd2")
 text = "PAY ELECTRICITY"
+
+[node name="Button" type="Button" parent="HomeUI/ContainerMainButtons"]
+layout_mode = 2
+text = "TEST BUTTON"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -496,3 +501,5 @@ theme_override_constants/line_spacing = 3
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Electric Cost: "
+
+[connection signal="button_down" from="HomeUI/ContainerMainButtons/Button" to="." method="_on_button_button_down"]

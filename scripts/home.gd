@@ -27,6 +27,7 @@ extends Node2D
 @export var label_other_rent_cost : Label
 @export var label_other_days_till_electricity : Label
 @export var label_other_electric_cost : Label
+@export var label_current_date : Label
 
 
 
@@ -65,3 +66,10 @@ func update_ui():
 	label_other_rent_cost.text = "Rent Cost: " + "$" + str(bills.rent_cost)
 	label_other_days_till_electricity.text = "Days Till Electric Bill: " + str(bills.days_till_electric)
 	label_other_electric_cost.text = "Electricity Cost: " + "$" + str(bills.electric_cost)
+	
+	label_current_date.text = world.current_date
+
+
+func _on_button_button_down() -> void:
+	world.next_day()
+	update_ui()
