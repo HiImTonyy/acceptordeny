@@ -13,3 +13,5 @@ var current_hunger_state = hunger_state.keys()[hunger]
 var went_to_work : bool = false
 var times_ate_today : int = 0
 var total_food_items : int = 0
+var promote_chance : float = 0.00
+var demote_chance : float = 0.00

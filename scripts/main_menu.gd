@@ -32,6 +32,8 @@ func set_player_shit():
 	player.went_to_work = false
 	player.times_ate_today = 0
 	player.total_food_items = 0
+	player.promote_chance = 0.00
+	player.demote_chance = 0.00
 	
 	# player stats
 	playerstats.total_correct_judgements = 0
@@ -55,6 +57,6 @@ func set_player_shit():
 	bills.electric_cost = 65.00
 	bills.days_till_rent = 30
 	bills.days_till_electric = 14
-	bills.paid_food = false
-	bills.paid_rent = false
-	bills.paid_electricity = false
+	bills.food_paid = false
+	bills.rent_paid = false
+	bills.electricity_paid = false

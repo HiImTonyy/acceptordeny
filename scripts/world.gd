@@ -1,5 +1,7 @@
 extends Node
 
+signal decrease_bill_date
+
 var current_month : int = 8
 var current_day : int = 8
 var current_year : int = 1998
@@ -21,5 +23,6 @@ func next_day():
 	if current_month > 12:
 		current_month = 1
 		current_year += 1
-		
+	
+	decrease_bill_date.emit()
 	format_current_date()
