@@ -63,5 +63,5 @@ func update_ui():
 	# OTHER INFORMATION
 	label_other_days_till_rent.text = "Days Till Rent Bill: " + str(bills.days_till_rent)
 	label_other_rent_cost.text = "Rent Cost: " + "$" + str(bills.rent_cost)
-	label_other_days_till_electricity.text = "Days Till Electric Bill " + str(bills.days_till_electric)
+	label_other_days_till_electricity.text = "Days Till Electric Bill: " + str(bills.days_till_electric)
 	label_other_electric_cost.text = "Electricity Cost: " + "$" + str(bills.electric_cost)
