@@ -83,6 +83,9 @@ func fade_effect():
 	tween.tween_property(label_popup_text, "modulate:a", 1, 0.2)
 	tween.tween_property(label_popup_text, "modulate:a", 0, 3)
 	
+func disable_UI():
+	$HomeUI.hide()
+	
 	
 func update_ui():
 	player.current_hunger_state = player.hunger_state.keys()[player.hunger]
