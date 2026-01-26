@@ -61,27 +61,11 @@ func disable_button(button : String, option : bool):
 			button_pay_electricity.disabled = option
 	
 func not_enough_cash():
-	popup_message("Not enough cash!", Color.RED)
+	world.popup_message("Not enough cash!", Color.RED, $MainUI)
 	
 func enough_cash():
-	popup_message("Bill paid!", Color.GREEN)
-	
-func popup_message(message: String, color: Color):
-	label_popup_text.add_theme_color_override("font_color", color)
-	label_popup_text.visible = true
-	label_popup_text.text = message
-	fade_effect()
-	update_ui()
-	
-func fade_effect():
-	label_popup_text.visible = true
-	label_popup_text.modulate.a = 1
-	var tween = create_tween()
-	tween.tween_property(label_popup_text, "modulate:a", 0, 0.2)
-	tween.tween_property(label_popup_text, "modulate:a", 1, 0.2)
-	tween.tween_property(label_popup_text, "modulate:a", 0, 0.2)
-	tween.tween_property(label_popup_text, "modulate:a", 1, 0.2)
-	tween.tween_property(label_popup_text, "modulate:a", 0, 3)
+	world.popup_message("Bill paid!", Color.GREEN, $MainUI)
+
 	
 func disable_UI():
 	$HomeUI.hide()

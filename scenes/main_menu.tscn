@@ -16,14 +16,14 @@ fill_to = Vector2(1, 0.3900362)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("menu_containers", "input_containers", "input_first_name", "input_last_name")]
 script = ExtResource("1_l6cm7")
-menu_containers = NodePath("MenuUI/VBoxContainer")
-input_containers = NodePath("MenuUI/InputContainers")
-input_first_name = NodePath("MenuUI/InputContainers/InputFirstName")
-input_last_name = NodePath("MenuUI/InputContainers/InputLastName")
+menu_containers = NodePath("MainUI/VBoxContainer")
+input_containers = NodePath("MainUI/InputContainers")
+input_first_name = NodePath("MainUI/InputContainers/InputFirstName")
+input_last_name = NodePath("MainUI/InputContainers/InputLastName")
 
-[node name="MenuUI" type="CanvasLayer" parent="."]
+[node name="MainUI" type="CanvasLayer" parent="."]
 
-[node name="Background" type="TextureRect" parent="MenuUI"]
+[node name="Background" type="TextureRect" parent="MainUI"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -31,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_l6cm7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -45,19 +45,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 13
 
-[node name="NewGame" type="Button" parent="MenuUI/VBoxContainer"]
+[node name="NewGame" type="Button" parent="MainUI/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.79635096, 0.9931738, 0.9999998, 1)
 theme_override_font_sizes/font_size = 50
 text = "New Game"
 
-[node name="LoadGame" type="Button" parent="MenuUI/VBoxContainer"]
+[node name="LoadGame" type="Button" parent="MainUI/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.79607844, 0.99215686, 1, 1)
 theme_override_font_sizes/font_size = 50
 text = "Load Game"
 
-[node name="Title" type="RichTextLabel" parent="MenuUI"]
+[node name="Title" type="RichTextLabel" parent="MainUI"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -72,40 +72,45 @@ text = "[color=white] ACCEPT [color=white]O[color= black]R DENY"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="InputContainers" type="VBoxContainer" parent="MenuUI"]
+[node name="LabelInputTitle" type="Label" parent="MainUI"]
+visible = false
+offset_left = 582.0
+offset_top = 378.0
+offset_right = 1360.0
+offset_bottom = 420.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Enter character first name and last name"
+horizontal_alignment = 1
+
+[node name="InputContainers" type="VBoxContainer" parent="MainUI"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -495.0
-offset_top = -161.5
-offset_right = 495.0
-offset_bottom = 161.5
+offset_left = -333.0
+offset_top = -119.0
+offset_right = 357.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 21
 
-[node name="LabelInputTitle" type="Label" parent="MenuUI/InputContainers"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 50
-text = "Enter character first name and last name"
-
-[node name="InputFirstName" type="LineEdit" parent="MenuUI/InputContainers"]
+[node name="InputFirstName" type="LineEdit" parent="MainUI/InputContainers"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 placeholder_text = "First Name"
 
-[node name="InputLastName" type="LineEdit" parent="MenuUI/InputContainers"]
+[node name="InputLastName" type="LineEdit" parent="MainUI/InputContainers"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 placeholder_text = "Last Name"
 
-[node name="Button" type="Button" parent="MenuUI/InputContainers"]
+[node name="Button" type="Button" parent="MainUI/InputContainers"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.99999994, 0.016543599, 0.41015744, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.015686275, 0.4117647, 1)
@@ -115,5 +120,5 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 50
 text = "Start Game"
 
-[connection signal="button_down" from="MenuUI/VBoxContainer/NewGame" to="." method="_on_new_game_button_down"]
-[connection signal="button_down" from="MenuUI/InputContainers/Button" to="." method="_on_start_game_button_button_down"]
+[connection signal="button_down" from="MainUI/VBoxContainer/NewGame" to="." method="_on_new_game_button_down"]
+[connection signal="button_down" from="MainUI/InputContainers/Button" to="." method="_on_start_game_button_button_down"]

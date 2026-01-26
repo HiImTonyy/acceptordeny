@@ -32,44 +32,44 @@ border_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("label_player_name", "label_player_cash", "label_hunger_level", "label_rank", "button_pay_rent", "button_pay_electricity", "label_stats_total_correct_judgements", "label_stats_total_incorrect_judgements", "label_stats_judgement_success_rate", "label_stats_total_errors_spotted_correctly", "label_stats_total_errors_spotted_incorrectly", "label_stats_errors_spotted_success_rate", "label_stats_total_cash_made", "label_stats_total_food_paid", "label_stats_total_rent_paid", "label_stats_total_electricity_paid", "label_stats_total_bills_paid", "label_stats_highest_correct_judgement_streak", "label_stats_highest_incorrect_judgement_streak", "label_stats_highest_judgement_days_streak", "label_other_days_till_rent", "label_other_rent_cost", "label_other_days_till_electricity", "label_other_electric_cost", "label_other_promote_chance", "label_other_demote_chance", "label_current_date", "label_popup_text")]
 script = ExtResource("1_u4wd2")
-label_player_name = NodePath("HomeUI/TopUI/ContainerTopUI/LabelPlayerName")
-label_player_cash = NodePath("HomeUI/TopUI/ContainerTopUI/LabelCash")
-label_hunger_level = NodePath("HomeUI/TopUI/ContainerTopUI/LabelHungerLevel")
-label_rank = NodePath("HomeUI/TopUI/ContainerTopUI/LabelRank")
-button_pay_rent = NodePath("HomeUI/ContainerMainButtons/ButtonPayRent")
-button_pay_electricity = NodePath("HomeUI/ContainerMainButtons/ButtonPayElectricity")
-label_stats_total_correct_judgements = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalCorrectJudgements")
-label_stats_total_incorrect_judgements = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalIncorrectJudgements")
-label_stats_judgement_success_rate = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsJudgementSuccessRate")
-label_stats_total_errors_spotted_correctly = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalErrorsSpottedCorrectly")
-label_stats_total_errors_spotted_incorrectly = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalErrorsSpottedIncorrectly")
-label_stats_errors_spotted_success_rate = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsErrorsSpottedSuccessRate")
-label_stats_total_cash_made = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalCashMade")
-label_stats_total_food_paid = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalFoodPaid")
-label_stats_total_rent_paid = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalRentPaid")
-label_stats_total_electricity_paid = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalElectricPaid")
-label_stats_total_bills_paid = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalBillsPaid")
-label_stats_highest_correct_judgement_streak = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsHighestCorrectJudgementStreak")
-label_stats_highest_incorrect_judgement_streak = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsHighestIncorrectJudgementStreak")
-label_stats_highest_judgement_days_streak = NodePath("HomeUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsHighestJudgementDaysStreak")
-label_other_days_till_rent = NodePath("HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherDaysTillRent")
-label_other_rent_cost = NodePath("HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherRentCost")
-label_other_days_till_electricity = NodePath("HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherDaysTillElectricBill")
-label_other_electric_cost = NodePath("HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherElectricCost")
-label_other_promote_chance = NodePath("HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherPromoteChance")
-label_other_demote_chance = NodePath("HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherDemoteChance")
-label_current_date = NodePath("HomeUI/TopUI/LabelCurrentDate")
-label_popup_text = NodePath("HomeUI/LabelPopupText")
+label_player_name = NodePath("MainUI/TopUI/ContainerTopUI/LabelPlayerName")
+label_player_cash = NodePath("MainUI/TopUI/ContainerTopUI/LabelCash")
+label_hunger_level = NodePath("MainUI/TopUI/ContainerTopUI/LabelHungerLevel")
+label_rank = NodePath("MainUI/TopUI/ContainerTopUI/LabelRank")
+button_pay_rent = NodePath("MainUI/ContainerMainButtons/ButtonPayRent")
+button_pay_electricity = NodePath("MainUI/ContainerMainButtons/ButtonPayElectricity")
+label_stats_total_correct_judgements = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalCorrectJudgements")
+label_stats_total_incorrect_judgements = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalIncorrectJudgements")
+label_stats_judgement_success_rate = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsJudgementSuccessRate")
+label_stats_total_errors_spotted_correctly = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalErrorsSpottedCorrectly")
+label_stats_total_errors_spotted_incorrectly = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalErrorsSpottedIncorrectly")
+label_stats_errors_spotted_success_rate = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsErrorsSpottedSuccessRate")
+label_stats_total_cash_made = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalCashMade")
+label_stats_total_food_paid = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalFoodPaid")
+label_stats_total_rent_paid = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalRentPaid")
+label_stats_total_electricity_paid = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalElectricPaid")
+label_stats_total_bills_paid = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsTotalBillsPaid")
+label_stats_highest_correct_judgement_streak = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsHighestCorrectJudgementStreak")
+label_stats_highest_incorrect_judgement_streak = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsHighestIncorrectJudgementStreak")
+label_stats_highest_judgement_days_streak = NodePath("MainUI/BottomUI/ContainerStats/VBoxContainer/LabelStatsHighestJudgementDaysStreak")
+label_other_days_till_rent = NodePath("MainUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherDaysTillRent")
+label_other_rent_cost = NodePath("MainUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherRentCost")
+label_other_days_till_electricity = NodePath("MainUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherDaysTillElectricBill")
+label_other_electric_cost = NodePath("MainUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherElectricCost")
+label_other_promote_chance = NodePath("MainUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherPromoteChance")
+label_other_demote_chance = NodePath("MainUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherDemoteChance")
+label_current_date = NodePath("MainUI/TopUI/LabelCurrentDate")
+label_popup_text = NodePath("MainUI/LabelPopupText")
 
-[node name="HomeUI" type="CanvasLayer" parent="."]
+[node name="MainUI" type="CanvasLayer" parent="."]
 
-[node name="TopUI" type="Control" parent="HomeUI"]
+[node name="TopUI" type="Control" parent="MainUI"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Background" type="ColorRect" parent="HomeUI/TopUI"]
+[node name="Background" type="ColorRect" parent="MainUI/TopUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 47.891003
@@ -82,7 +82,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="ContainerTopUI" type="VBoxContainer" parent="HomeUI/TopUI"]
+[node name="ContainerTopUI" type="VBoxContainer" parent="MainUI/TopUI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -96,35 +96,35 @@ offset_bottom = 204.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LabelPlayerName" type="Label" parent="HomeUI/TopUI/ContainerTopUI"]
+[node name="LabelPlayerName" type="Label" parent="MainUI/TopUI/ContainerTopUI"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.37254903, 0.05490196, 1)
 theme_override_font_sizes/font_size = 39
 text = "Watahburgah Mcgee"
 horizontal_alignment = 1
 
-[node name="LabelCash" type="Label" parent="HomeUI/TopUI/ContainerTopUI"]
+[node name="LabelCash" type="Label" parent="MainUI/TopUI/ContainerTopUI"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.37254903, 0.05490196, 1)
 theme_override_font_sizes/font_size = 39
 text = "Balance: $2.50"
 horizontal_alignment = 1
 
-[node name="LabelHungerLevel" type="Label" parent="HomeUI/TopUI/ContainerTopUI"]
+[node name="LabelHungerLevel" type="Label" parent="MainUI/TopUI/ContainerTopUI"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.37254903, 0.05490196, 1)
 theme_override_font_sizes/font_size = 39
 text = "Hunger Level: Hungie"
 horizontal_alignment = 1
 
-[node name="LabelRank" type="Label" parent="HomeUI/TopUI/ContainerTopUI"]
+[node name="LabelRank" type="Label" parent="MainUI/TopUI/ContainerTopUI"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.37254903, 0.05490196, 1)
 theme_override_font_sizes/font_size = 39
 text = "Rank: PewPew"
 horizontal_alignment = 1
 
-[node name="LabelCurrentDate" type="Label" parent="HomeUI/TopUI"]
+[node name="LabelCurrentDate" type="Label" parent="MainUI/TopUI"]
 layout_mode = 0
 offset_right = 365.0
 offset_bottom = 42.0
@@ -133,7 +133,7 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 30
 text = "Current Date: 01/01/2000"
 
-[node name="LabelPopupText" type="Label" parent="HomeUI"]
+[node name="LabelPopupText" type="Label" parent="MainUI"]
 visible = false
 offset_left = 745.0
 offset_top = 242.0
@@ -146,7 +146,7 @@ theme_override_font_sizes/font_size = 30
 text = "Whattya buyin'? "
 horizontal_alignment = 1
 
-[node name="ContainerMainButtons" type="GridContainer" parent="HomeUI"]
+[node name="ContainerMainButtons" type="GridContainer" parent="MainUI"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -162,7 +162,7 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="ButtonGoToWork" type="Button" parent="HomeUI/ContainerMainButtons"]
+[node name="ButtonGoToWork" type="Button" parent="MainUI/ContainerMainButtons"]
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(3.9948522e-06, 0.8876626, 0, 1)
@@ -175,7 +175,7 @@ theme_override_styles/pressed = ExtResource("2_u4wd2")
 theme_override_styles/hover = ExtResource("2_u4wd2")
 text = "GO TO WORK"
 
-[node name="ButtonPayFood" type="Button" parent="HomeUI/ContainerMainButtons"]
+[node name="ButtonPayFood" type="Button" parent="MainUI/ContainerMainButtons"]
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 0, 0.36862746, 1)
@@ -189,7 +189,7 @@ theme_override_styles/hover = ExtResource("2_u4wd2")
 theme_override_styles/disabled = ExtResource("2_u4wd2")
 text = "GET FOOD"
 
-[node name="ButtonGoToSleep" type="Button" parent="HomeUI/ContainerMainButtons"]
+[node name="ButtonGoToSleep" type="Button" parent="MainUI/ContainerMainButtons"]
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0.09891463, 0.61108226, 0.99999994, 1)
@@ -202,7 +202,7 @@ theme_override_styles/pressed = ExtResource("2_u4wd2")
 theme_override_styles/hover = ExtResource("2_u4wd2")
 text = "GO TO SLEEP"
 
-[node name="ButtonPayRent" type="Button" parent="HomeUI/ContainerMainButtons"]
+[node name="ButtonPayRent" type="Button" parent="MainUI/ContainerMainButtons"]
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 0, 0.36862746, 1)
@@ -216,7 +216,7 @@ theme_override_styles/hover = ExtResource("2_u4wd2")
 theme_override_styles/disabled = ExtResource("2_u4wd2")
 text = "PAY RENT"
 
-[node name="ButtonSaveGame" type="Button" parent="HomeUI/ContainerMainButtons"]
+[node name="ButtonSaveGame" type="Button" parent="MainUI/ContainerMainButtons"]
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0.84705883, 1, 0, 1)
@@ -229,7 +229,7 @@ theme_override_styles/pressed = ExtResource("2_u4wd2")
 theme_override_styles/hover = ExtResource("2_u4wd2")
 text = "SAVE GAME"
 
-[node name="ButtonPayElectricity" type="Button" parent="HomeUI/ContainerMainButtons"]
+[node name="ButtonPayElectricity" type="Button" parent="MainUI/ContainerMainButtons"]
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 0, 0.36862746, 1)
@@ -243,17 +243,17 @@ theme_override_styles/hover = ExtResource("2_u4wd2")
 theme_override_styles/disabled = ExtResource("2_u4wd2")
 text = "PAY ELECTRICITY"
 
-[node name="Button" type="Button" parent="HomeUI/ContainerMainButtons"]
+[node name="Button" type="Button" parent="MainUI/ContainerMainButtons"]
 layout_mode = 2
 text = "TEST BUTTON"
 
-[node name="BottomUI" type="Control" parent="HomeUI"]
+[node name="BottomUI" type="Control" parent="MainUI"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Background" type="ColorRect" parent="HomeUI/BottomUI"]
+[node name="Background" type="ColorRect" parent="MainUI/BottomUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 47.891003
@@ -265,7 +265,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="LabelPlayerStatsTitle" type="Label" parent="HomeUI/BottomUI"]
+[node name="LabelPlayerStatsTitle" type="Label" parent="MainUI/BottomUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4625
@@ -282,7 +282,7 @@ theme_override_colors/font_color = Color(0.8236359, 0.0005332887, 0.82363003, 1)
 theme_override_font_sizes/font_size = 50
 text = "STATS"
 
-[node name="ContainerStats" type="ScrollContainer" parent="HomeUI/BottomUI"]
+[node name="ContainerStats" type="ScrollContainer" parent="MainUI/BottomUI"]
 layout_mode = 0
 offset_left = 722.0
 offset_top = 781.0
@@ -292,12 +292,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yxilm")
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HomeUI/BottomUI/ContainerStats"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI/BottomUI/ContainerStats"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="LabelStatsTotalCorrectJudgements" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsTotalCorrectJudgements" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.30588236, 0.9647059, 1, 1)
@@ -307,7 +307,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
 text = "Total Correct Judgements: 1"
 horizontal_alignment = 1
 
-[node name="LabelStatsTotalIncorrectJudgements" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsTotalIncorrectJudgements" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -316,7 +316,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mahjx")
 text = "Total Incorrect Judgements: 99"
 horizontal_alignment = 1
 
-[node name="LabelStatsJudgementSuccessRate" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsJudgementSuccessRate" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.30588236, 0.9647059, 1, 1)
@@ -326,7 +326,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
 text = "Judgement Success Rate: -420%"
 horizontal_alignment = 1
 
-[node name="LabelStatsTotalErrorsSpottedCorrectly" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsTotalErrorsSpottedCorrectly" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -335,7 +335,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mahjx")
 text = "Total Errors Spotted Correctly: 0"
 horizontal_alignment = 1
 
-[node name="LabelStatsTotalErrorsSpottedIncorrectly" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsTotalErrorsSpottedIncorrectly" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.30588236, 0.9647059, 1, 1)
@@ -345,7 +345,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
 text = "Total Errors Spotted Incorrectly: 200"
 horizontal_alignment = 1
 
-[node name="LabelStatsErrorsSpottedSuccessRate" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsErrorsSpottedSuccessRate" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -354,7 +354,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mahjx")
 text = "Errors Spotted Success Rate: 69%"
 horizontal_alignment = 1
 
-[node name="LabelStatsTotalCashMade" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsTotalCashMade" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.30588236, 0.9647059, 1, 1)
@@ -364,7 +364,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
 text = "Total Cash Made: $0.40"
 horizontal_alignment = 1
 
-[node name="LabelStatsTotalFoodPaid" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsTotalFoodPaid" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -373,7 +373,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mahjx")
 text = "Total Food Paid: $1"
 horizontal_alignment = 1
 
-[node name="LabelStatsTotalRentPaid" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsTotalRentPaid" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.30588236, 0.9647059, 1, 1)
@@ -383,7 +383,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
 text = "Total Rent Paid: $102,203"
 horizontal_alignment = 1
 
-[node name="LabelStatsTotalElectricPaid" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsTotalElectricPaid" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -392,7 +392,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mahjx")
 text = "Total Electricity Paid: $910,200"
 horizontal_alignment = 1
 
-[node name="LabelStatsTotalBillsPaid" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsTotalBillsPaid" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.30588236, 0.9647059, 1, 1)
@@ -402,7 +402,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
 text = "Total Bills Paid: $1,703,284,192.92"
 horizontal_alignment = 1
 
-[node name="LabelStatsHighestCorrectJudgementStreak" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsHighestCorrectJudgementStreak" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -411,7 +411,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mahjx")
 text = "Highest Correct Judgement Streak: 1"
 horizontal_alignment = 1
 
-[node name="LabelStatsHighestIncorrectJudgementStreak" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsHighestIncorrectJudgementStreak" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.30588236, 0.9647059, 1, 1)
@@ -421,7 +421,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
 text = "Highest Incorrect Judgement Streak: 0"
 horizontal_alignment = 1
 
-[node name="LabelStatsHighestJudgementDaysStreak" type="Label" parent="HomeUI/BottomUI/ContainerStats/VBoxContainer"]
+[node name="LabelStatsHighestJudgementDaysStreak" type="Label" parent="MainUI/BottomUI/ContainerStats/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -430,7 +430,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mahjx")
 text = "Highest Correct Judgement Days: 1,025"
 horizontal_alignment = 1
 
-[node name="LabelOtherInformation" type="Label" parent="HomeUI/BottomUI"]
+[node name="LabelOtherInformation" type="Label" parent="MainUI/BottomUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4625
@@ -447,7 +447,7 @@ theme_override_colors/font_color = Color(0.8236359, 0.0005332887, 0.82363003, 1)
 theme_override_font_sizes/font_size = 50
 text = "OTHER INFO"
 
-[node name="ContainerOtherInfo" type="ScrollContainer" parent="HomeUI/BottomUI"]
+[node name="ContainerOtherInfo" type="ScrollContainer" parent="MainUI/BottomUI"]
 layout_mode = 0
 offset_left = 1398.0
 offset_top = 781.0
@@ -457,12 +457,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yxilm")
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HomeUI/BottomUI/ContainerOtherInfo"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI/BottomUI/ContainerOtherInfo"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
 
-[node name="LabelOtherDaysTillRent" type="Label" parent="HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
+[node name="LabelOtherDaysTillRent" type="Label" parent="MainUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0.58431375, 1)
 theme_override_colors/font_outline_color = Color(0.5607386, 0, 0.1989589, 1)
@@ -471,7 +471,7 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Days Till Rent Bill: "
 
-[node name="LabelOtherRentCost" type="Label" parent="HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
+[node name="LabelOtherRentCost" type="Label" parent="MainUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0.58431375, 1)
 theme_override_colors/font_outline_color = Color(0.5607386, 0, 0.1989589, 1)
@@ -480,7 +480,7 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Rent Cost: "
 
-[node name="LabelOtherDaysTillElectricBill" type="Label" parent="HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
+[node name="LabelOtherDaysTillElectricBill" type="Label" parent="MainUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0.58431375, 1)
 theme_override_colors/font_outline_color = Color(0.5607386, 0, 0.1989589, 1)
@@ -488,7 +488,7 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Days Till Electric Bill: "
 
-[node name="LabelOtherElectricCost" type="Label" parent="HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
+[node name="LabelOtherElectricCost" type="Label" parent="MainUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0.58431375, 1)
 theme_override_colors/font_outline_color = Color(0.5607386, 0, 0.1989589, 1)
@@ -497,7 +497,7 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Electric Cost: "
 
-[node name="LabelOtherPromoteChance" type="Label" parent="HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
+[node name="LabelOtherPromoteChance" type="Label" parent="MainUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0.58431375, 1)
 theme_override_colors/font_outline_color = Color(0.5607386, 0, 0.1989589, 1)
@@ -506,7 +506,7 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Electric Cost: "
 
-[node name="LabelOtherDemoteChance" type="Label" parent="HomeUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
+[node name="LabelOtherDemoteChance" type="Label" parent="MainUI/BottomUI/ContainerOtherInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0.58431375, 1)
 theme_override_colors/font_outline_color = Color(0.5607386, 0, 0.1989589, 1)
@@ -515,7 +515,7 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 25
 text = "Electric Cost: "
 
-[node name="Divider" type="ColorRect" parent="HomeUI/BottomUI"]
+[node name="Divider" type="ColorRect" parent="MainUI/BottomUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 47.891003
@@ -528,7 +528,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.29586652, 0.2958665, 0.2958665, 1)
 
-[node name="Divider2" type="ColorRect" parent="HomeUI/BottomUI"]
+[node name="Divider2" type="ColorRect" parent="MainUI/BottomUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 47.891003
@@ -541,6 +541,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.29586652, 0.2958665, 0.2958665, 1)
 
-[connection signal="button_down" from="HomeUI/ContainerMainButtons/ButtonPayRent" to="." method="_on_button_pay_rent_button_down"]
-[connection signal="button_down" from="HomeUI/ContainerMainButtons/ButtonPayElectricity" to="." method="_on_button_pay_electricity_button_down"]
-[connection signal="button_down" from="HomeUI/ContainerMainButtons/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="MainUI/ContainerMainButtons/ButtonPayRent" to="." method="_on_button_pay_rent_button_down"]
+[connection signal="button_down" from="MainUI/ContainerMainButtons/ButtonPayElectricity" to="." method="_on_button_pay_electricity_button_down"]
+[connection signal="button_down" from="MainUI/ContainerMainButtons/Button" to="." method="_on_button_button_down"]

@@ -9,6 +9,7 @@ extends Node2D
 func _on_new_game_button_down() -> void:
 	menu_containers.visible = false
 	input_containers.visible = true 
+	$MainUI/LabelInputTitle.visible = true
 
 
 func _on_start_game_button_button_down() -> void:
@@ -19,8 +20,8 @@ func _on_start_game_button_button_down() -> void:
 		
 		get_tree().change_scene_to_file("res://scenes/home.tscn")
 	else:
-		$MenuUI/InputContainers/LabelInputTitle.text = "NEITHER FIRST NAME AND LAST NAME CAN BE BLANK!"
-		
+
+		world.popup_message("FIRST NAME AND LAST NAME CANNOT BE THE SAME!", Color.RED, $MainUI)
 		
 
 func set_player_shit():
