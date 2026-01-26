@@ -6,6 +6,10 @@ extends Node2D
 @export var label_hunger_level : Label
 @export var label_rank : Label
 
+# BUTTONS
+@export var button_pay_rent : Button
+@export var button_pay_electricity : Button
+
 # PLAYER STATS
 @export var label_stats_total_correct_judgements : Label
 @export var label_stats_total_incorrect_judgements : Label
@@ -38,20 +42,29 @@ extends Node2D
 func _ready():
 	bills.not_enough_cash.connect(not_enough_cash)
 	bills.enough_cash.connect(enough_cash)
+	bills.disable_button.connect(disable_button)
 	update_ui()
 		
 func _on_button_pay_rent_button_down() -> void:
 	player.paying_bill.emit("rent")
+	update_ui()
 	
 func _on_button_pay_electricity_button_down() -> void:
 	player.paying_bill.emit("electric")
+	update_ui()
+		
+func disable_button(button : String, option : bool):
+	match button:
+		"rent":
+			button_pay_rent.disabled = option
+		"electric":
+			button_pay_electricity.disabled = option
 	
 func not_enough_cash():
 	popup_message("Not enough cash!", Color.RED)
 	
 func enough_cash():
 	popup_message("Bill paid!", Color.GREEN)
-	
 	
 func popup_message(message: String, color: Color):
 	label_popup_text.add_theme_color_override("font_color", color)
