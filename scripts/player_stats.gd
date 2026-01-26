@@ -14,3 +14,16 @@ var total_bills_paid : float = 0.00
 var highest_correct_judgement_streak = 0
 var highest_incorrect_judgement_streak = 0
 var highest_judgement_days_streak = 0
+
+
+func _ready():	
+	bills.stats_increase.connect(increase_stats)
+	
+func increase_stats(stat: String):
+	match stat:
+		"rent":
+			total_rent_paid += bills.rent_cost
+			total_bills_paid += bills.rent_cost
+		"electric":
+			total_electricity_paid += bills.electric_cost
+			total_bills_paid += bills.electric_cost

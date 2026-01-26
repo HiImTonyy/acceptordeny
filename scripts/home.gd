@@ -41,10 +41,10 @@ func _ready():
 	update_ui()
 		
 func _on_button_pay_rent_button_down() -> void:
-	player.paying_rent_bill.emit()
+	player.paying_bill.emit("rent")
 	
 func _on_button_pay_electricity_button_down() -> void:
-	player.paying_electric_bill.emit()
+	player.paying_bill.emit("electric")
 	
 func not_enough_cash():
 	popup_message("Not enough cash!", Color.RED)

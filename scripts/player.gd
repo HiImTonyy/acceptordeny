@@ -1,7 +1,6 @@
 extends Node
 
-signal paying_rent_bill
-signal paying_electric_bill
+signal paying_bill(bill : String)
 
 var cash : float = 50.00
 var first_name : String = "Tony"
@@ -18,3 +17,11 @@ var times_ate_today : int = 0
 var total_food_items : int = 0
 var promote_chance : float = 0.00
 var demote_chance : float = 0.00
+
+
+
+func decrease_cash(amount : float):
+	cash -= amount
+	
+func increase_cash(amount : float):
+	cash -= amount
