@@ -27,7 +27,7 @@ func next_day():
 	decrease_bill_date.emit()
 	format_current_date()
 	
-func popup_message(message: String, color: Color, node: Node):
+func popup_message(message: String, color: Color, node: Node, position: String):
 	var label : Label
 	var tween = create_tween()
 	
@@ -41,7 +41,27 @@ func popup_message(message: String, color: Color, node: Node):
 	label.visible = true
 	
 	var screensize = get_viewport().get_visible_rect().size
-	label.position = screensize / 2 - label.get_size() / 2
+	var labelsize = label.get_size()
+	
+	match position:
+		"center":
+			label.position = screensize / 2 - labelsize / 2
+		"center_top":
+			label.position = Vector2((screensize.x - labelsize.x) / 2, 0)
+		"center_bottom":
+			label.position = Vector2((screensize.x - labelsize.x) / 2, screensize.y - labelsize.y)
+		"center_left":
+			label.position = Vector2(0, (screensize.y - labelsize.y) / 2)
+		"top_left":
+			label.position = Vector2(0, 0)
+		"bottom_left":
+			label.position = Vector2(0, screensize.y - labelsize.y)
+		"center_right":
+			label.position = Vector2(screensize.x - labelsize.x, (screensize.y - labelsize.y) / 2)
+		"top_right":
+			label.position = Vector2(screensize.x - labelsize.x, 0)
+		"bottom_right":
+			label.position = Vector2(screensize.x - labelsize.x, screensize.y - labelsize.y)
 	
 	
 	label.modulate.a = 1

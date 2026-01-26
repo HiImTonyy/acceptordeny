@@ -61,10 +61,10 @@ func disable_button(button : String, option : bool):
 			button_pay_electricity.disabled = option
 	
 func not_enough_cash():
-	world.popup_message("Not enough cash!", Color.RED, $MainUI)
+	world.popup_message("Not enough cash!", Color.RED, $MainUI, "top_right")
 	
 func enough_cash():
-	world.popup_message("Bill paid!", Color.GREEN, $MainUI)
+	world.popup_message("Bill paid!", Color.GREEN, $MainUI, "top_right")
 
 	
 func disable_UI():
