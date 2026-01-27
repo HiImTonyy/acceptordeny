@@ -541,6 +541,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.29586652, 0.2958665, 0.2958665, 1)
 
+[connection signal="button_down" from="MainUI/ContainerMainButtons/ButtonGoToSleep" to="." method="_on_button_go_to_sleep_button_down"]
 [connection signal="button_down" from="MainUI/ContainerMainButtons/ButtonPayRent" to="." method="_on_button_pay_rent_button_down"]
 [connection signal="button_down" from="MainUI/ContainerMainButtons/ButtonPayElectricity" to="." method="_on_button_pay_electricity_button_down"]
 [connection signal="button_down" from="MainUI/ContainerMainButtons/Button" to="." method="_on_button_button_down"]

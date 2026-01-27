@@ -52,7 +52,13 @@ func _on_button_pay_rent_button_down() -> void:
 func _on_button_pay_electricity_button_down() -> void:
 	player.paying_bill.emit("electric")
 	update_ui()
-		
+	
+	
+func _on_button_go_to_sleep_button_down() -> void:
+	world.next_day()
+	event.start_event.emit("sleeping")
+	update_ui()
+	
 func disable_button(button : String, option : bool):
 	match button:
 		"rent":
@@ -69,7 +75,6 @@ func enough_cash():
 	
 func disable_UI():
 	$HomeUI.hide()
-	
 	
 func update_ui():
 	player.current_hunger_state = player.hunger_state.keys()[player.hunger]
@@ -109,7 +114,6 @@ func update_ui():
 
 func _on_button_button_down() -> void:
 	world.next_day()
-	bills.rent_paid = true
 	bills.electricity_paid = true
 	player.cash += 1000
 	update_ui()

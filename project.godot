@@ -21,6 +21,7 @@ player="*res://scenes/player.tscn"
 playerstats="*res://scenes/player_stats.tscn"
 bills="*res://scenes/bills.tscn"
 world="*res://scenes/world.tscn"
+event="*res://scenes/event.tscn"
 
 [display]
 
