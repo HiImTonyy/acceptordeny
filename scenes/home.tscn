@@ -565,6 +565,7 @@ offset_bottom = 1038.0
 theme_override_constants/separation = 37
 
 [node name="LabelMainEventText" type="Label" parent="EventUI/VBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 50

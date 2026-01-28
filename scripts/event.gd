@@ -28,7 +28,7 @@ var unique_events = [
 		"chose_choice_1": false,
 		"chose_choice_2": false,
 		"choice_1_outcome_text": "Wow, nothing bad happened.",
-		"choice_1_alt_outcome_text": "The Landlord slammed in your door and knocked you unconcious with a baseball bat. you woke up and found that he stole 30% of your money",
+		"choice_1_alt_outcome_text": "The Landlord slammed in your door and knocked you unconcious with a baseball bat. you woke up and found that he stole 25% of your money",
 		"choice_2_outcome_text": "The landlord accepts and ends the call after calling you an idiot."
 	}
 ]
@@ -85,11 +85,15 @@ func event_outcomes():
 	
 	match event_selected["event_name"]:
 		"did_not_pay_rent":
-			if roll <= did_not_pay_rent_negative_chance:
+			if roll <= did_not_pay_rent_negative_chance and chose_choice_1 == true:
 				choice_1_alt_outcome = true
+				## TODO: MAKE SOMETHING ELSE HAPPEN IF PLAYER HAS NO MONEY.
+				player.cash -= player.cash * 0.25
 			elif chose_choice_1 == true:
 				print("CHOICE 1!")
 			else:
+				## TODO: MAKE SOMETHING ELSE HAPPEN IF PLAYER HAS NO MONEY.
+				player.cash -= bills.rent_cost * 2
 				print("CHOICE 2!")
 	
 func reset_event_booleans():

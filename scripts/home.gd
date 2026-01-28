@@ -165,6 +165,7 @@ func event_outcome_screen():
 
 
 func _on_button_end_button_down() -> void:
+	update_ui()
 	$EventUI.hide()
 	button_finish_event.hide()
 	$MainUI.show()
