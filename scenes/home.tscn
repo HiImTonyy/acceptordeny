@@ -581,6 +581,7 @@ text = "DO THAT THING "
 autowrap_mode = 1
 
 [node name="ButtonEventChoice2" type="Button" parent="EventUI/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 35
@@ -596,7 +597,6 @@ visible = false
 layout_mode = 2
 
 [node name="LabelEventChoice2OutcomeText" type="Label" parent="EventUI/VBoxContainer"]
-visible = false
 layout_mode = 2
 
 [node name="ButtonEnd" type="Button" parent="EventUI/VBoxContainer"]

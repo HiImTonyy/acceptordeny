@@ -1,5 +1,4 @@
 extends Node2D
-signal made_event_choice
 
 # TOP UI
 @export var label_player_name : Label
@@ -157,9 +156,11 @@ func event_outcome_screen():
 	button_choice_2.hide()
 	button_finish_event.show()
 	
-	if event.chose_choice_1 == true:
+	if event.chose_choice_1 == true and event.choice_1_alt_outcome == true:
+		label_main_event_text.text = event.choice_1_alt_outcome_text
+	elif event.chose_choice_1 == true:
 		label_main_event_text.text = event.choice_1_outcome_text
-	else:
+	elif event.chose_choice_2 == true:
 		label_main_event_text.text = event.choice_2_outcome_text
 
 
@@ -167,3 +168,4 @@ func _on_button_end_button_down() -> void:
 	$EventUI.hide()
 	button_finish_event.hide()
 	$MainUI.show()
+	event.reset_event_booleans()

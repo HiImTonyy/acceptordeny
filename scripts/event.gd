@@ -10,12 +10,14 @@ var choice_2_text : String
 var chose_choice_1 : bool
 var chose_choice_2 : bool
 var choice_1_outcome_text : String
-var choice_1_negative_outcome_text : String
+var choice_1_alt_outcome_text : String
 var choice_2_outcome_text : String
+var choice_1_alt_outcome : bool
+var choice_2_alt_outcome : bool
 
-var did_not_pay_rent_negative_chance : int = 35
 var sleep_event_chance : int = 20
 var end_workday_event_chance : int = 30
+var did_not_pay_rent_negative_chance : int = 35
 
 var unique_events = [
 	{
@@ -26,7 +28,7 @@ var unique_events = [
 		"chose_choice_1": false,
 		"chose_choice_2": false,
 		"choice_1_outcome_text": "Wow, nothing bad happened.",
-		"choice_1_negative_outcome_text": "The Landlord slammed in your door and knocked you unconcious with a baseball bat. you woke up and found that he stole 30% of your money",
+		"choice_1_alt_outcome_text": "The Landlord slammed in your door and knocked you unconcious with a baseball bat. you woke up and found that he stole 30% of your money",
 		"choice_2_outcome_text": "The landlord accepts and ends the call after calling you an idiot."
 	}
 ]
@@ -70,16 +72,28 @@ func set_event_variables():
 	chose_choice_1 = event_selected["chose_choice_1"]
 	chose_choice_2 = event_selected["chose_choice_2"]
 	choice_1_outcome_text = event_selected["choice_1_outcome_text"]
-	choice_1_negative_outcome_text = event_selected["choice_1_negative_outcome_text"]
+	choice_1_alt_outcome_text = event_selected["choice_1_alt_outcome_text"]
 	choice_2_outcome_text = event_selected["choice_2_outcome_text"]
+	print(choice_2_outcome_text)
 	
 	event_has_started.emit()
 	
 	
-func event_outcomes():
+func event_outcomes():	
+	var roll = randi_range(1, 100)
+	print(roll)
+	
 	match event_selected["event_name"]:
 		"did_not_pay_rent":
-			if chose_choice_1 == true:
+			if roll <= did_not_pay_rent_negative_chance:
+				choice_1_alt_outcome = true
+			elif chose_choice_1 == true:
 				print("CHOICE 1!")
 			else:
 				print("CHOICE 2!")
+	
+func reset_event_booleans():
+	chose_choice_1 = false
+	chose_choice_2 = false
+	choice_1_alt_outcome = false
+	choice_2_alt_outcome = false
