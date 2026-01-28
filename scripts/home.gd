@@ -1,4 +1,5 @@
 extends Node2D
+signal made_event_choice
 
 # TOP UI
 @export var label_player_name : Label
@@ -37,14 +38,26 @@ extends Node2D
 @export var label_current_date : Label
 @export var label_popup_text : Label
 
-
+# EVENT SHIT
+@export var label_main_event_text : Label
+@export var button_choice_1 : Button
+@export var button_choice_2 : Button
+@export var button_finish_event : Button
 
 func _ready():
 	bills.not_enough_cash.connect(not_enough_cash)
 	bills.enough_cash.connect(enough_cash)
 	bills.disable_button.connect(disable_button)
+	event.event_has_started.connect(start_event)
 	update_ui()
-		
+
+func start_event():
+	disable_UI()
+	button_choice_1.show()
+	button_choice_2.show()
+	$EventUI.show()
+	
+
 func _on_button_pay_rent_button_down() -> void:
 	player.paying_bill.emit("rent")
 	update_ui()
@@ -71,10 +84,9 @@ func not_enough_cash():
 	
 func enough_cash():
 	world.popup_message("Bill paid!", Color.GREEN, $MainUI, "top_right")
-
 	
 func disable_UI():
-	$HomeUI.hide()
+	$MainUI.hide()
 	
 func update_ui():
 	player.current_hunger_state = player.hunger_state.keys()[player.hunger]
@@ -110,10 +122,48 @@ func update_ui():
 	label_other_demote_chance.text = "Demote Chance: " + str(snapped(player.demote_chance, 0.01)) + "%"
 	
 	label_current_date.text = world.current_date
+	
+	# EVENT SHIT
+	label_main_event_text.text = event.main_text
+	button_choice_1.text = event.choice_1_text
+	button_choice_2.text = event.choice_2_text
+	
+	if bills.days_till_electric == 1:
+		label_other_days_till_electricity.text = "LAST DAY TO PAY ELECTRIC BILL!"
+		
+	if bills.days_till_rent == 1:
+		label_other_days_till_rent.text = "LAST DAY TO PAY RENT BILL!"
 
 
 func _on_button_button_down() -> void:
 	world.next_day()
-	bills.electricity_paid = true
 	player.cash += 1000
 	update_ui()
+
+
+func _on_button_event_choice_1_button_down() -> void:
+	event.chose_choice_1 = true
+	event.event_outcomes()
+	event_outcome_screen()
+
+
+func _on_button_event_choice_2_button_down() -> void:
+	event.chose_choice_2 = true
+	event.event_outcomes()
+	event_outcome_screen()
+	
+func event_outcome_screen():
+	button_choice_1.hide()
+	button_choice_2.hide()
+	button_finish_event.show()
+	
+	if event.chose_choice_1 == true:
+		label_main_event_text.text = event.choice_1_outcome_text
+	else:
+		label_main_event_text.text = event.choice_2_outcome_text
+
+
+func _on_button_end_button_down() -> void:
+	$EventUI.hide()
+	button_finish_event.hide()
+	$MainUI.show()

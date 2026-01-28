@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqfobbs4xqhqh"]
+[gd_scene load_steps=9 format=3 uid="uid://cqfobbs4xqhqh"]
 
 [ext_resource type="Script" uid="uid://dqywtegc8560c" path="res://scripts/home.gd" id="1_u4wd2"]
 [ext_resource type="StyleBox" uid="uid://c7wpc68s8mtw5" path="res://style_stuff/normal_button.tres" id="2_u4wd2"]
@@ -30,7 +30,10 @@ bg_color = Color(0, 0, 0, 1)
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("label_player_name", "label_player_cash", "label_hunger_level", "label_rank", "button_pay_rent", "button_pay_electricity", "label_stats_total_correct_judgements", "label_stats_total_incorrect_judgements", "label_stats_judgement_success_rate", "label_stats_total_errors_spotted_correctly", "label_stats_total_errors_spotted_incorrectly", "label_stats_errors_spotted_success_rate", "label_stats_total_cash_made", "label_stats_total_food_paid", "label_stats_total_rent_paid", "label_stats_total_electricity_paid", "label_stats_total_bills_paid", "label_stats_highest_correct_judgement_streak", "label_stats_highest_incorrect_judgement_streak", "label_stats_highest_judgement_days_streak", "label_other_days_till_rent", "label_other_rent_cost", "label_other_days_till_electricity", "label_other_electric_cost", "label_other_promote_chance", "label_other_demote_chance", "label_current_date", "label_popup_text")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4wd2"]
+content_margin_bottom = 76.0
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("label_player_name", "label_player_cash", "label_hunger_level", "label_rank", "button_pay_rent", "button_pay_electricity", "label_stats_total_correct_judgements", "label_stats_total_incorrect_judgements", "label_stats_judgement_success_rate", "label_stats_total_errors_spotted_correctly", "label_stats_total_errors_spotted_incorrectly", "label_stats_errors_spotted_success_rate", "label_stats_total_cash_made", "label_stats_total_food_paid", "label_stats_total_rent_paid", "label_stats_total_electricity_paid", "label_stats_total_bills_paid", "label_stats_highest_correct_judgement_streak", "label_stats_highest_incorrect_judgement_streak", "label_stats_highest_judgement_days_streak", "label_other_days_till_rent", "label_other_rent_cost", "label_other_days_till_electricity", "label_other_electric_cost", "label_other_promote_chance", "label_other_demote_chance", "label_current_date", "label_popup_text", "label_main_event_text", "button_choice_1", "button_choice_2", "button_finish_event")]
 script = ExtResource("1_u4wd2")
 label_player_name = NodePath("MainUI/TopUI/ContainerTopUI/LabelPlayerName")
 label_player_cash = NodePath("MainUI/TopUI/ContainerTopUI/LabelCash")
@@ -60,6 +63,10 @@ label_other_promote_chance = NodePath("MainUI/BottomUI/ContainerOtherInfo/VBoxCo
 label_other_demote_chance = NodePath("MainUI/BottomUI/ContainerOtherInfo/VBoxContainer/LabelOtherDemoteChance")
 label_current_date = NodePath("MainUI/TopUI/LabelCurrentDate")
 label_popup_text = NodePath("MainUI/LabelPopupText")
+label_main_event_text = NodePath("EventUI/VBoxContainer/LabelMainEventText")
+button_choice_1 = NodePath("EventUI/VBoxContainer/ButtonEventChoice1")
+button_choice_2 = NodePath("EventUI/VBoxContainer/ButtonEventChoice2")
+button_finish_event = NodePath("EventUI/VBoxContainer/ButtonEnd")
 
 [node name="MainUI" type="CanvasLayer" parent="."]
 
@@ -541,7 +548,67 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.29586652, 0.2958665, 0.2958665, 1)
 
+[node name="EventUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="EventUI"]
+offset_left = -10.0
+offset_right = 1924.0
+offset_bottom = 1089.0
+color = Color(0.34407577, 0.34407574, 0.34407574, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EventUI"]
+offset_left = 41.0
+offset_top = 23.0
+offset_right = 1865.0
+offset_bottom = 1038.0
+theme_override_constants/separation = 37
+
+[node name="LabelMainEventText" type="Label" parent="EventUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4wd2")
+text = "SO THAT HAPPENED THEN THE OTHER THING HAPPENED AND THEN THERE  WHAT THAT OTHER THING OVER THERE AND THEN THERE WAS THAT OTHER THING AND THAT THING AND THAT..."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ButtonEventChoice1" type="Button" parent="EventUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+text = "DO THAT THING "
+autowrap_mode = 1
+
+[node name="ButtonEventChoice2" type="Button" parent="EventUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+text = "DO THAT OTHER THING"
+autowrap_mode = 2
+
+[node name="LabelEventChoice1NegativeOutcomeText" type="Label" parent="EventUI/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="LabelEventChoice1OutcomeText" type="Label" parent="EventUI/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="LabelEventChoice2OutcomeText" type="Label" parent="EventUI/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ButtonEnd" type="Button" parent="EventUI/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "BACK TO HOME"
+
 [connection signal="button_down" from="MainUI/ContainerMainButtons/ButtonGoToSleep" to="." method="_on_button_go_to_sleep_button_down"]
 [connection signal="button_down" from="MainUI/ContainerMainButtons/ButtonPayRent" to="." method="_on_button_pay_rent_button_down"]
 [connection signal="button_down" from="MainUI/ContainerMainButtons/ButtonPayElectricity" to="." method="_on_button_pay_electricity_button_down"]
 [connection signal="button_down" from="MainUI/ContainerMainButtons/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="EventUI/VBoxContainer/ButtonEventChoice1" to="." method="_on_button_event_choice_1_button_down"]
+[connection signal="button_down" from="EventUI/VBoxContainer/ButtonEventChoice2" to="." method="_on_button_event_choice_2_button_down"]
+[connection signal="button_down" from="EventUI/VBoxContainer/ButtonEnd" to="." method="_on_button_end_button_down"]
