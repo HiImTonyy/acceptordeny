@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhwc04kqxycfu"]
+
+[ext_resource type="Script" uid="uid://o4ak80w2d1b6" path="res://scripts/sounds.gd" id="1_aevjb"]
+[ext_resource type="AudioStream" uid="uid://d3xi7px48h183" path="res://sounds/mouse_click.mp3" id="2_8b883"]
+[ext_resource type="AudioStream" uid="uid://comgn4xu8t8fx" path="res://sounds/error_sound.mp3" id="3_h5l0e"]
+[ext_resource type="AudioStream" uid="uid://cuu8iswwpyy57" path="res://sounds/your_broke_sound.mp3" id="4_umdxc"]
+[ext_resource type="AudioStream" uid="uid://bs2yjf38jppky" path="res://sounds/sleep_sound.mp3" id="5_4v5pq"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_aevjb")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8b883")
+
+[node name="ErrorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_h5l0e")
+
+[node name="YourBrokeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_umdxc")
+
+[node name="SleepSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4v5pq")

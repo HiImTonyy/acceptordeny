@@ -22,6 +22,7 @@ playerstats="*res://scenes/player_stats.tscn"
 bills="*res://scenes/bills.tscn"
 world="*res://scenes/world.tscn"
 event="*res://scenes/event.tscn"
+sound="*res://scenes/sounds.tscn"
 
 [display]
 

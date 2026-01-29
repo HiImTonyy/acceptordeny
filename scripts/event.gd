@@ -43,10 +43,10 @@ func _ready():
 	
 	
 func select_event(event_type : String):
+	var roll = randi_range(1, 100)
+	
 	bills.rent_paid = false
 	bills.days_till_rent = - 1
-	
-	var roll = randi_range(1, 100)
 	
 	if bills.rent_paid == false and bills.days_till_rent <= 0 and bills.electricity_paid == false and bills.days_till_electric <= 0:
 		pass
@@ -74,7 +74,6 @@ func set_event_variables():
 	choice_1_outcome_text = event_selected["choice_1_outcome_text"]
 	choice_1_alt_outcome_text = event_selected["choice_1_alt_outcome_text"]
 	choice_2_outcome_text = event_selected["choice_2_outcome_text"]
-	print(choice_2_outcome_text)
 	
 	event_has_started.emit()
 	
@@ -87,8 +86,10 @@ func event_outcomes():
 		"did_not_pay_rent":
 			if roll <= did_not_pay_rent_negative_chance and chose_choice_1 == true:
 				choice_1_alt_outcome = true
-				## TODO: MAKE SOMETHING ELSE HAPPEN IF PLAYER HAS NO MONEY.
-				player.cash -= player.cash * 0.25
+				if player.cash > 0:
+					player.cash -= player.cash * 0.25
+				else:
+					choice_1_alt_outcome_text = "The Landlord slams in your door and swings at your head with a baseball bat, knocking you unconcious. he sweeps through your apartment for anything of value, only to find nothing. he pisses on your head before leaving."
 			elif chose_choice_1 == true:
 				print("CHOICE 1!")
 			else:

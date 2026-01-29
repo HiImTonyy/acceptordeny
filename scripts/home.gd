@@ -67,6 +67,7 @@ func _on_button_pay_electricity_button_down() -> void:
 	
 	
 func _on_button_go_to_sleep_button_down() -> void:
+	sound.play_sound(sound.play.sleep)
 	world.next_day()
 	event.start_event.emit("sleeping")
 	update_ui()
@@ -79,6 +80,7 @@ func disable_button(button : String, option : bool):
 			button_pay_electricity.disabled = option
 	
 func not_enough_cash():
+	sound.play_sound(sound.play.player_broke)
 	world.popup_message("Not enough cash!", Color.RED, $MainUI, "top_right")
 	
 func enough_cash():
