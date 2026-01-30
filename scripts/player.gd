@@ -18,10 +18,19 @@ var total_food_items : int = 0
 var promote_chance : float = 0.00
 var demote_chance : float = 0.00
 
-
-
 func decrease_cash(amount : float):
 	cash -= amount
 	
 func increase_cash(amount : float):
 	cash -= amount
+	
+	
+func set_newgame_variables():
+	cash = 50.00
+	daily_wage = 50.00
+	rank = rank_state.Noobie
+	hunger = hunger_state.Alright
+	went_to_work = false
+	total_food_items = 0
+	promote_chance = 0.00
+	demote_chance = 0.00

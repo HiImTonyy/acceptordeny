@@ -52,3 +52,13 @@ func pay_bill(bill : String):
 				enough_cash.emit()
 				stats_increase.emit("electric")
 				disable_button.emit("electric", true)
+				
+func set_newgame_variables():
+	food_cost = 22.00
+	rent_cost = 250.00
+	electric_cost = 65.00
+	days_till_rent = 30
+	days_till_electric = 14
+	food_paid = false
+	rent_paid  = false
+	electricity_paid = false
