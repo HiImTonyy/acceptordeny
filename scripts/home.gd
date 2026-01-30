@@ -67,7 +67,6 @@ func _on_button_pay_electricity_button_down() -> void:
 	
 	
 func _on_button_go_to_sleep_button_down() -> void:
-	sound.play_sound(sound.play.sleep)
 	world.next_day()
 	event.start_event.emit("sleeping")
 	update_ui()
@@ -124,16 +123,16 @@ func update_ui():
 	
 	label_current_date.text = world.current_date
 	
-	# EVENT SHIT
-	label_main_event_text.text = event.main_text
-	button_choice_1.text = event.choice_1_text
-	button_choice_2.text = event.choice_2_text
-	
 	if bills.days_till_electric == 1:
 		label_other_days_till_electricity.text = "LAST DAY TO PAY ELECTRIC BILL!"
 		
 	if bills.days_till_rent == 1:
 		label_other_days_till_rent.text = "LAST DAY TO PAY RENT BILL!"
+	
+	# EVENT SHIT
+	label_main_event_text.text = event.main_text
+	button_choice_1.text = event.choice_1_text
+	button_choice_2.text = event.choice_2_text
 
 
 func _on_button_button_down() -> void:

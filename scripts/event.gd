@@ -33,8 +33,9 @@ var unique_events = [
 	}
 ]
 
-var sleep_events # NEEDS TO BE ADDED
-var end_of_workday_events # NEEDS TO BE ADDED
+# TODO: add sleep and workday events.
+var sleep_events 
+var end_of_workday_events 
 
 
 func _ready():
@@ -83,6 +84,7 @@ func event_outcomes():
 	print(roll)
 	
 	match event_selected["event_name"]:
+		
 		"did_not_pay_rent":
 			if roll <= did_not_pay_rent_negative_chance and chose_choice_1 == true:
 				choice_1_alt_outcome = true
@@ -93,7 +95,11 @@ func event_outcomes():
 			elif chose_choice_1 == true:
 				print("CHOICE 1!")
 			else:
-				## TODO: MAKE SOMETHING ELSE HAPPEN IF PLAYER HAS NO MONEY.
+				#TODO: 
+				# Make it so that the landlord forgives the player and asks to not screw up again. add boolean "forgot_rent" in player script as well as a new int
+				# "times_missed_rent". if true and missed 2 times, do thing (landlord gets mad, says "don't fuck up or I'll take X as pay!". 
+				# if screws up a 3rd time, do thing (maybe landlord sends in mob for a % chance of taking X amount of money, depending on multiple choices of what
+				# player does to defend himself. 
 				player.cash -= bills.rent_cost * 2
 				print("CHOICE 2!")
 	

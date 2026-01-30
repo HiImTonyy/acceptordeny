@@ -10,6 +10,3 @@ func play_sound(sfx : play):
 			$ErrorSound.play()
 		play.player_broke:
 			$YourBrokeSound.play()
-		play.sleep:
-			$SleepSound.play()
-		
