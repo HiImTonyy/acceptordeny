@@ -2,9 +2,12 @@ extends Node
 
 signal decrease_bill_date
 
-var current_month : int = 8
-var current_day : int = 8
-var current_year : int = 1998
+var starting_month : int = 8
+var starting_day : int = 18
+var starting_year : int = 1998
+var current_month : int = starting_month
+var current_day : int = starting_day
+var current_year : int = starting_year
 var current_date: String = "WINDS-A BLOWIN', FAT MAN ROLLIN'"
 var popup_message_finished : bool = true
 

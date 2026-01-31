@@ -30,3 +30,7 @@ func set_player_shit():
 	player.set_newgame_variables()
 	playerstats.set_newgame_variables()
 	bills.set_newgame_variables()
+
+
+func _on_button_test_button_down() -> void:
+	person.generate_person()
